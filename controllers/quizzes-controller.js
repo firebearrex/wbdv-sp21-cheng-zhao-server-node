@@ -1,14 +1,18 @@
-module.exports = app => {
-    const quizService = require('../services/quizzes/quiz-service');
+const quizService = require('../services/quizzes/quiz-service');
 
+module.exports = app => {
     const findAllQuizzes = (req, res) => {
         res.send(quizService.findAllQuizzes());
     };
 
     const findQuizById = (req, res) => {
-        const qid = req.params['qid'];
-        const quiz = quizService.findQuizById(qid);
-        res.send(quiz);
+        let quizId = req.params.qid;
+        const quiz = quizService.findQuizById(quizId);
+        if (quiz != undefined) {
+            res.send(quiz);
+        } else {
+            console.log("No such quiz ID found.")
+        }
     };
 
     app.get('/api/quizzes', findAllQuizzes);
