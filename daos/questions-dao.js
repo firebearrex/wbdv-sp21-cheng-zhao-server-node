@@ -7,7 +7,7 @@ const findQuestionById = (qid) => questionsModel.findById(qid);
 
 // export const findQuestionsForQuiz = (quizId) => quizzesModel.findById(quizId)
 //     .populate('questions').then(quiz => quiz.questions);
-const findQuestionsForQuiz = (quizId) => questionsModel.find({quizId: quizId});
+const findQuestionsForQuiz = (quizId) => questionsModel.find({quizId});
 
 const questionsDAO = {
     findAllQuestions,
