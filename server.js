@@ -1,7 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 require('dotenv').config();
-const constants = require('./constants/mongoDBAtlas');
 const uri = process.env.MONGODB_URI;
 const app = express();
 
