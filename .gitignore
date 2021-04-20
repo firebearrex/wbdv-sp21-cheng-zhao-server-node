@@ -1,2 +1,4 @@
 /node_modules/
 /data
+/constants/mongoDBAtlas.js
+package-lock.json
